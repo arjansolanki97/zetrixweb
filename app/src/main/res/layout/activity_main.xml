@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/pink">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drawer"
+                android:padding="@dimen/_5sdp"
+                android:adjustViewBounds="true"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Users"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cart"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/_5sdp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/row_category"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:clipToPadding="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:gravity="center_vertical"
+            android:background="@color/background">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10 User Found" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivViewType"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_grid"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/_5sdp" />
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUser"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:listitem="@layout/row_list_user"
+            android:padding="@dimen/_5sdp"
+            android:clipToPadding="false"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</layout>
